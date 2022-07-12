@@ -52,11 +52,7 @@ if [ -n "${NUMPY_HEADERS}" ]; then
   export OLD_NUMPY_HEADERS=$NUMPY_HEADERS
 fi
 
-if [ -n "${SET_INSTALLATION_OPTIONS}" ]; then
-  source $SET_INSTALLATION_OPTIONS
-else
-  source set_installation_options
-fi
+source set_installation_options
 
 # ----------------------------------------------------------------------------
 # ----------------------------------------------------------------------------

@@ -6,8 +6,12 @@ SHELL := /bin/bash
 # Set C++17 compliant compiler. If USE_MPI we use MPICC 
 #===================================================
 
-CC      = g++ -std=c++1z -O3 -Wall -Wextra -march=native
-MPICC   = mpicxx -std=c++1z -O3 -Wall -Wextra -march=native
+#VM BEGINS
+#CC      = g++ -std=c++1z -O3 -Wall -Wextra -march=native
+#MPICC   = mpicxx -std=c++1z -O3 -Wall -Wextra -march=native
+CC      = g++ -std=c++17 -O3 -Wall -Wextra 
+MPICC   = mpicxx -std=c++17 -O3 -Wall -Wextra 
+#VM ENDS
 
 #===================================================
 # Options
@@ -36,23 +40,29 @@ USE_LUA          = true
 #===================================================
 
 # Main library include (path to folder containin FML/)
-FML_INCLUDE    = $(HOME)/local/FML
+FML_INCLUDE    = $(ROOTDIR)
 
 # FFTW
-FFTW_INCLUDE   = $(HOME)/local/include
-FFTW_LIB       = $(HOME)/local/lib
+#VM BEGINS
+FFTW_INCLUDE   = $(CONDA_PREFIX)/local/include
+FFTW_LIB       = $(CONDA_PREFIX)/local/lib
+#VM ENDS
 FFTW_LINK      = -lfftw3
 FFTW_MPI_LINK  = -lfftw3_mpi
 FFTW_OMP_LINK  = -lfftw3_threads
 
 # GSL
-GSL_INCLUDE    = $(HOME)/local/include
-GSL_LIB        = $(HOME)/local/lib
+#VM BEGINS
+GSL_INCLUDE    = $(CONDA_PREFIX)/include
+GSL_LIB        = $(CONDA_PREFIX)/lib
+#VM ENDS
 GSL_LINK       = -lgsl -lgslcblas
 
 # LUA
-LUA_INCLUDE    = $(HOME)/local/include
-LUA_LIB        = $(HOME)/local/lib
+#VM BEGINS
+LUA_INCLUDE    = $(CONDA_PREFIX)/include
+LUA_LIB        = $(CONDA_PREFIX)/lib
+#VM ENDS
 LUA_LINK       = -llua -ldl
 
 #===================================================
