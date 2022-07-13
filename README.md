@@ -53,11 +53,11 @@ to compile Cola
 
 ## Running Cola Examples
 
-**Step 1 of 5**: activate the conda environment
+**Step 1 of 4**: activate the conda environment
 
     $ conda activate cola
 
-**Step 2 of 5**: activate the private python environment
+**Step 2 of 4**: activate the private python environment
 
     $(cola) source start_cola
 
@@ -65,12 +65,12 @@ to compile Cola
 
 (**expert**) Why `$(cola)(.local)` is a feature, not a bug? The Cola environment can be the same for all Cola instances, with [start_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola)/[stop_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola) loading/unloading the corresponding `LD_LIBRARY_PATH`, `CPATH`, `C_INCLUDE_PATH`, `CPLUS_INCLUDE_PATH` and `PATH`. *Why more than one Cola instance?* While users may be running chains in one instance, they might use a second instantiation to make experimental changes.
 
-**Step 4 of 5**: select the number of OpenMP cores
+**Step 3 of 4**: select the number of OpenMP cores
     
     $(cola)(.local) export OMP_PROC_BIND=close
     $(cola)(.local) export OMP_NUM_THREADS=1
     
-**Step 5 of 5**: run cola
+**Step 4 of 4**: run cola
 
     $(cola)(.local) mpirun -n 1 --mca btl tcp,self --bind-to core --rank-by core --map-by numa:pe=${OMP_NUM_THREADS} ./FML/COLASolver/nbody
     
