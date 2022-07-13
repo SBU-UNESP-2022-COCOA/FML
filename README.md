@@ -54,6 +54,19 @@ With this installation method, users must activate the cola environment whenever
 
     $(base) conda activate cola
 
+to clone the repository. 
+   
+### Installation of Cola base code
+
+Type:
+     $(cola) $CONDA_PREFIX/bin/git https://github.com/SBU-UNESP-2022-COCOA/FML.git
+
+(**expert**) Cola developers with set ssh keys in GitHub may find more convenient to use the command
+
+    $(cocoa) $CONDA_PREFIX/bin/git clone git@github.com:SBU-UNESP-2022-COCOA/FML.git
+
+(**Warning**) We assumed in the command above that users have installed the pre-requisite packages (including git-lfs) via the recommended **Conda installation method**. With other installation method, `$CONDA_PREFIX/bin/git` should be replaced with `git`. 
+
 Cola is made aware of the chosen installation method of required packages via special environment keys located on the [set_installation_options](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/set_installation_options) script, as shown below
 
     [Extracted from set_installation_options script]
