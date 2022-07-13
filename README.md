@@ -30,22 +30,22 @@ With this installation method, users must activate the cola environment whenever
 
     $ conda activate cola
 
-Cola is made aware of the chosen installation method of required packages via special environment keys located on the set_installation_options script, as shown below
+Cola is made aware of the chosen installation method of required packages via special environment keys located on the [set_installation_options](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/set_installation_options) script, as shown below
 
     [Extracted from set_installation_options script]
     #  ---------------------------------------------------------------------------
-    # HOW COCOA BE INSTALLED? -------------------------------
+    # HOW COLA SHOULD BE INSTALLED? -------------------------------
 
     #export DOCKER_INSTALLATION=1
     #export MINICONDA_INSTALLATION=1
     
 The user must uncomment the appropriate key, and then type the following command
 
-    $ source install_cola_local_environment
+    $(cola) source install_cola_local_environment
 
 Finally, type
 
-    $ source compile_cola
+    $(cola) source compile_cola
     
 to compile Cola
 
