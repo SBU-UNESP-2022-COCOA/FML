@@ -1,4 +1,6 @@
-# Conda Environment (trial) - by V. Miranda
+# Installing Cola a la COCOA - by V. Miranda
+
+## Via Conda (best for Linux)
 
      conda create --name cola python=3.7 --quiet --yes && \
      conda install -n cola --quiet --yes  \
