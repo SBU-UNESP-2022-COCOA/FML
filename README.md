@@ -59,7 +59,7 @@ to compile Cola
 
     $(cola) source start_cola
 
-(**warning**) Users will see a terminal that looks like this: `$(Cocoa)(.local)`. *This is a feature, not a bug*! 
+(**warning**) Users will see a terminal that looks like this: `$(cola)(.local)`. *This is a feature, not a bug*! 
 
 (**expert**) Why `$(cola)(.local)` is a feature, not a bug? The Cola environment can be the same for all Cola instances, with [start_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola)/[stop_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola) loading/unloading the corresponding `LD_LIBRARY_PATH`, `CPATH`, `C_INCLUDE_PATH`, `CPLUS_INCLUDE_PATH` and `PATH`. *Why more than one Cola instance?* While users may be running chains in one instance, they might use a second instantiation to make experimental changes.
 
