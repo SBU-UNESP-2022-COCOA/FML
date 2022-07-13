@@ -61,6 +61,8 @@ to clone the repository.
 Type:
 
      $(cola) $CONDA_PREFIX/bin/git https://github.com/SBU-UNESP-2022-COCOA/FML.git
+     
+     $(cola) cd ./FML
 
 (**expert**) Cola developers with set ssh keys in GitHub may find more convenient to use the command
 
