@@ -2,6 +2,32 @@
 
 ## Via Conda (best for Linux)
 
+### Special Instructions for the SBU supercomputer
+
+If this is the first time you are using conda, then add the following to your bashrc before installing or loading cola conda environment: 
+     
+     module load python
+     module load anaconda
+     conda init
+
+After that, reload your shell script
+
+     source ~/.bashrc
+
+Finally, users should configure conda to be strict in its choice of channels.
+
+     conda config --set auto_update_conda false 
+
+     conda config --set show_channel_urls true 
+
+     conda config --set auto_activate_base false 
+
+     conda config --prepend channels conda-forge 
+
+     conda config --set channel_priority strict 
+
+### Conda Cola Environment
+
      conda create --name cola python=3.7 --quiet --yes && \
      conda install -n cola --quiet --yes  \
        'conda-forge::libgcc-ng=10.3.0' \
