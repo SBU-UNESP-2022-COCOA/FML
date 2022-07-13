@@ -109,7 +109,29 @@ to compile Cola
 **Step 4 of 4**: run cola
 
     $(cola)(.local) mpirun -n 1 --mca btl tcp,self --bind-to core --rank-by core --map-by numa:pe=${OMP_NUM_THREADS} ./FML/COLASolver/nbody
-    
+
+You should see
+     
+     #=====================================================
+     #           ________________  .____
+     #           \_   _____/     \ |    |
+     #            |    __)/  \ /  \|    |
+     #            |     \/    Y    \    |___
+     #            \___  /\____|__  /_______ \
+     #                \/         \/        \/
+     #
+     # Initializing FML, MPI and FFTW
+     # MPI is enabled. Running with 1 MPI tasks
+     # OpenMP is enabled. Main task has 1 threads availiable
+     # MPI + Threads is working
+     # FFTW is enabled. Thread support is enabled
+     #
+     # List of tasks:
+     # Task    0 [cn079]
+     #     x-domain [       0 ,        1)
+     #
+     #=====================================================
+
 # FML
 
 For documentation and more info about the library see the [website](https://fml.wintherscoming.no/). See also the [Doxygen documentation](https://fml.wintherscoming.no/doxygen/).
