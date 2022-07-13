@@ -1,4 +1,4 @@
-# Installing Cola a la COCOA - by V. Miranda
+# Installing Cola - by V. Miranda
 
 ## Via Conda (best for Linux)
 
