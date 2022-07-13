@@ -37,7 +37,7 @@ Cola is made aware of the chosen installation method of required packages via sp
     # HOW COLA SHOULD BE INSTALLED? -------------------------------
 
     #export DOCKER_INSTALLATION=1
-    #export MINICONDA_INSTALLATION=1
+    export MINICONDA_INSTALLATION=1
     
 The user must uncomment the appropriate key, and then type the following command
 
