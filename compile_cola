@@ -76,6 +76,7 @@ addvar PATH $ROOTDIR/.local/bin
     
 cd $ROOTDIR/FML/COLASolver
 
+make clean
 make -j $MAKE_NUM_THREADS all
 
 cd $ROOTDIR

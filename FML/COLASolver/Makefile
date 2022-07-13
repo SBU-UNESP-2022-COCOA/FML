@@ -9,9 +9,11 @@ SHELL := /bin/bash
 #VM BEGINS
 #CC      = g++ -std=c++1z -O3 -Wall -Wextra -march=native
 #MPICC   = mpicxx -std=c++1z -O3 -Wall -Wextra -march=native
-CC      = g++ -std=c++17 -O3 -Wall -Wextra 
-MPICC   = mpicxx -std=c++17 -O3 -Wall -Wextra 
+CC      = $(CONDA_PREFIX)/bin/x86_64-conda-linux-gnu-g++ -std=c++17 -O3 -Wall -Wextra 
+MPICC   = $(CONDA_PREFIX)/bin/mpicxx -std=c++17 -O3 -Wall -Wextra 
 #VM ENDS
+
+
 
 #===================================================
 # Options
