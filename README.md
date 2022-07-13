@@ -64,7 +64,7 @@ Type:
 
 (**expert**) Cola developers with set ssh keys in GitHub may find more convenient to use the command
 
-    $(cocoa) $CONDA_PREFIX/bin/git clone git@github.com:SBU-UNESP-2022-COCOA/FML.git
+    $(cola) $CONDA_PREFIX/bin/git clone git@github.com:SBU-UNESP-2022-COCOA/FML.git
 
 (**Warning**) We assumed in the command above that users have installed the pre-requisite packages (including git-lfs) via the recommended **Conda installation method**. With other installation method, `$CONDA_PREFIX/bin/git` should be replaced with `git`. 
 
