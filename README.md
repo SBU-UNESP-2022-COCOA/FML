@@ -25,7 +25,53 @@
        'conda-forge::lua=5.4.4' \
        'conda-forge::cgal=5.4' \
        'conda-forge::fftw=3.3.8=mpi_openmpi_h50a73e0_1014'
-       
+
+With this installation method, users must activate the cola environment whenever working with Cola, as shown below 
+
+    $ conda activate cola
+
+Cola is made aware of the chosen installation method of required packages via special environment keys located on the set_installation_options script, as shown below
+
+    [Extracted from set_installation_options script]
+    #  ---------------------------------------------------------------------------
+    # HOW COCOA BE INSTALLED? -------------------------------
+
+    #export DOCKER_INSTALLATION=1
+    #export MINICONDA_INSTALLATION=1
+    
+The user must uncomment the appropriate key, and then type the following command
+
+    $ source install_cola_local_environment
+
+Finally, type
+
+    $ source compile_cola
+    
+to compile Cola
+
+## Running Cola Examples
+
+**Step 1 of 5**: activate the conda environment
+
+    $ conda activate cola
+
+**Step 2 of 5**: activate the private python environment
+
+    $(cola) source start_cola
+
+(**warning**) Users will see a terminal that looks like this: `$(Cocoa)(.local)`. *This is a feature, not a bug*! 
+
+(**expert**) Why `$(cola)(.local)` is a feature, not a bug? The Cola environment can be the same for all Cola instances, with [start_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola)/[stop_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola) loading/unloading the corresponding `LD_LIBRARY_PATH`, `CPATH`, `C_INCLUDE_PATH`, `CPLUS_INCLUDE_PATH` and `PATH`. *Why more than one Cola instance?* While users may be running chains in one instance, they might use a second instantiation to make experimental changes.
+
+**Step 4 of 5**: select the number of OpenMP cores
+    
+    $(cola)(.local) export OMP_PROC_BIND=close
+    $(cola)(.local) export OMP_NUM_THREADS=1
+    
+**Step 5 of 5**: run cola
+
+    $(cola)(.local) mpirun -n 1 --mca btl tcp,self --bind-to core --rank-by core --map-by numa:pe=${OMP_NUM_THREADS} ./FML/COLASolver/nbody
+    
 # FML
 
 For documentation and more info about the library see the [website](https://fml.wintherscoming.no/). See also the [Doxygen documentation](https://fml.wintherscoming.no/doxygen/).
