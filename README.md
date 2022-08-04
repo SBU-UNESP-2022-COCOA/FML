@@ -23,6 +23,7 @@ Finally, users should configure conda to be strict in its choice of channels.
        conda config --set channel_priority strict  
 
 ### Conda Cola Environment
+Setup the Cola environment with the command:
 
      $(base) conda create --name cola python=3.7 --quiet --yes && \
                conda install -n cola --quiet --yes  \
