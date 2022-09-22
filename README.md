@@ -141,6 +141,10 @@ to compile Cola
 
     $(cola)(.local) mpirun -n 1 --mca btl tcp,self --bind-to core --rank-by core --map-by numa:pe=${OMP_NUM_THREADS} ./FML/COLASolver/nbody
 
+ (**Santos Dumont users**) You should change the connection specification in `mpirun`. Modify the command above to:
+ 
+    $(cola)(.local) mpirun -n 1 --mca btl_tcp_if_include ib0 --bind-to core --rank-by core ./FML/COLASolver/nbody
+
 You should see
      
      #=====================================================
