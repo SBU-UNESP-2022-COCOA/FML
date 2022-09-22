@@ -51,7 +51,7 @@ Setup the Cola environment with the command:
                  'conda-forge::cgal=5.4' \
                  'conda-forge::fftw=3.3.8=mpi_openmpi_h50a73e0_1014'
 
-**Santos Dumont Users** Some clusters like Santos Dumont require applications and libraries to be installed in a scratch file system. In the Santos Dumont case, the computing nodes don't have access to the `/home/<USER>` directory and thus the conda environment needs to be setup in the `/scratch/<PROJECT>/<USER>` folder. You can configure where the conda environment is installed by modifying the command above:
+**Santos Dumont Users**: Some clusters like Santos Dumont require applications and libraries to be installed in a scratch file system. In the Santos Dumont case, the computing nodes don't have access to the `/home/<USER>` directory and thus the conda environment needs to be setup in the `/scratch/<PROJECT>/<USER>` folder. You can configure where the conda environment is installed by modifying the command above:
 
      $(base) conda create --prefix /scratch/<PROJECT>/<USER>/.env/cola python=3.7 --quiet --yes && \
                conda install --prefix /scratch/<PROJECT>/<USER>/.env/cola --quiet --yes  \
