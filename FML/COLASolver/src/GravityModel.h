@@ -406,9 +406,15 @@ class GravityModel {
             // Normalize such that D = 1 at initial redshift
             FML::INTERPOLATION::SPLINE::Spline tmp;
             tmp.create(loga_arr, D1, "Temporary D1(loga) Spline");
+
             const double D = tmp(std::log(aini));
+
             for (size_t i = 0; i < D1.size(); i++) {
-                D1[i] /= D;
+                //JG begins
+                //D1[i] /= D;
+                D1[i] = transferdata->get_cdm_baryon_transfer_function(koverH0 * H0_hmpc, std::exp(loga_arr[i])) /
+                                   transferdata->get_cdm_baryon_transfer_function(koverH0 * H0_hmpc, aini);            
+                //JG ends
                 D2[i] /= D * D;
                 D3a[i] /= D * D * D;
                 D3b[i] /= D * D * D;

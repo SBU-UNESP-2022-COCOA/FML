@@ -71,6 +71,15 @@ void read_parameterfile(ParameterMap & param, std::string filename) {
     if (param.get<std::string>("cosmology_model") == "DGP") {
         param["cosmology_dgp_OmegaRC"] = lfp.read_double("cosmology_dgp_OmegaRC", 0.0, REQUIRED);
     }
+    
+    //JG begins
+    //=============================================================
+    // H table model
+    //=============================================================
+    if (param.get<std::string>("cosmology_model") == "H_table") {
+        param["bg_input_filename"] = lfp.read_string("bg_input_filename", "", REQUIRED);
+    }
+    //JG ends
 
     //=============================================================
     // Gravity model

@@ -15,6 +15,9 @@
 #include "Cosmology_LCDM.h"
 #include "Cosmology_w0wa.h"
 #include "Cosmology_JBD.h"
+//JG begins
+#include "Cosmology_H_table.h"
+//JG ends
 
 //=============================================================
 // The availiable gravity models
@@ -130,6 +133,10 @@ int main(int argc, char ** argv) {
         cosmo = std::make_shared<CosmologyDGP>();
     else if (cosmology_model == "JBD")
         cosmo = std::make_shared<CosmologyJBD>();
+    //JG begins
+    else if (cosmology_model == "H_table")
+        cosmo = std::make_shared<Cosmology_H_table>();
+    //JG ends
     else
         throw std::runtime_error("Unknown cosmology [" + cosmology_model + "]");
     cosmo->read_parameters(param);
