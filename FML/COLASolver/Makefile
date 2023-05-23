@@ -48,6 +48,9 @@ FML_INCLUDE    = $(ROOTDIR)
 #VM BEGINS
 FFTW_INCLUDE   = $(CONDA_PREFIX)/local/include
 FFTW_LIB       = $(CONDA_PREFIX)/local/lib
+#FFTW_INCLUDE = /gpfs/projects/MirandaGroup/jonathan/FML/include
+#FFTW_LIB = /gpfs/projects/MirandaGroup/jonathan/FML/lib
+
 #VM ENDS
 FFTW_LINK      = -lfftw3
 FFTW_MPI_LINK  = -lfftw3_mpi

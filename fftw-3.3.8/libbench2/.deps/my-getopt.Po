@@ -1,0 +1,56 @@
+my-getopt.o: my-getopt.c \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/string.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/features.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/sys/cdefs.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/gnu/stubs-64.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/lib/gcc/x86_64-conda-linux-gnu/10.3.0/include/stddef.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/xlocale.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/string.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/string2.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/endian.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/endian.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/byteswap.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/types.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/stdlib.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/string3.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/stdio.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/libio.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/_G_config.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/wchar.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/lib/gcc/x86_64-conda-linux-gnu/10.3.0/include/stdarg.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/stdio_lim.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/sys_errlist.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/stdio.h \
+ /gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/stdio2.h \
+ ../config.h my-getopt.h
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/string.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/features.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/sys/cdefs.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/wordsize.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/gnu/stubs.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/gnu/stubs-64.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/lib/gcc/x86_64-conda-linux-gnu/10.3.0/include/stddef.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/xlocale.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/string.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/string2.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/endian.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/endian.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/byteswap.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/types.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/typesizes.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/stdlib.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/string3.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/stdio.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/libio.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/_G_config.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/wchar.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/lib/gcc/x86_64-conda-linux-gnu/10.3.0/include/stdarg.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/stdio_lim.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/sys_errlist.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/stdio.h:
+/gpfs/home/jsgordon/miniconda/envs/cola/x86_64-conda-linux-gnu/sysroot/usr/include/bits/stdio2.h:
+../config.h:
+my-getopt.h:
