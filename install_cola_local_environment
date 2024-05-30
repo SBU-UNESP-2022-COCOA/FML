@@ -20,10 +20,6 @@ if [ -n "${OMP_NUM_THREADS}" ]; then
     export OLD_OMP_NUM_THREADS=$OMP_NUM_THREADS
 fi
 
-if [ -n "${LD_LIBRARY_PATH}" ]; then
-    export OLD_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
-fi
-
 if [ -n "${PYTHONPATH}" ]; then
     export OLD_PYTHONPATH=$PYTHONPATH
 fi
@@ -68,12 +64,8 @@ $GLOBALPYTHON3 -m venv $ROOTDIR/.local/
 source $ROOTDIR/.local/bin/activate
 
 if [ -n "${GLOBAL_PACKAGES_LOCATION}" ]; then
-addvar PYTHONPATH $GLOBAL_PACKAGES_LOCATION/lib/python$PYTHON_VERSION/site-packages
-
-addvar LD_LIBRARY_PATH $GLOBAL_PACKAGES_LOCATION/lib
+    addvar PYTHONPATH $GLOBAL_PACKAGES_LOCATION/lib/python$PYTHON_VERSION/site-packages
 fi
-
-addvar LD_LIBRARY_PATH $ROOTDIR/.local/lib
 
 addvar PYTHONPATH $ROOTDIR/.local/lib/python$PYTHON_VERSION/site-packages
 
