@@ -2,7 +2,7 @@
 *.out
 core.*
 *.a
-#*.o
+*.o
 *.pyc
 *.egg-info/
 *.out
