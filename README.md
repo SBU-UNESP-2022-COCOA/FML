@@ -48,7 +48,7 @@ If you are one of the Cola developers with set SSH keys to the FML GitHub reposi
      
      or 
      
-     $CONDA_PREFIX/bin/git git@github.com:SBU-COLA-2024/FML.git FML
+     $CONDA_PREFIX/bin/git git@github.com:SBU-UNESP-2022-COCOA/FML.git FML
 
 ### Install COLA (.local) local environment
 
