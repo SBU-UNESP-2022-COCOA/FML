@@ -1,175 +1,90 @@
 # Installing Cola - by V. Miranda
 
-## Via Conda (best for Linux)
+The first step is to download and run the Miniconda installation script. Then, you will need to create the Conda Cola environment.
 
-### Special Instructions for the SBU supercomputer
-
-If this is the first time you are using conda, then add the following to your bashrc before installing or loading cola conda environment: 
-     
-     module load python
-     module load anaconda
-     conda init
-
-After that, reload your shell script
-
-     source ~/.bashrc
-
-Finally, users should configure conda to be strict in its choice of channels.
-
-     $(base) conda config --set auto_update_conda false  && \
-       conda config --set show_channel_urls true   && \
-       conda config --set auto_activate_base false && \
-       conda config --prepend channels conda-forge && \
-       conda config --set channel_priority strict  
-
-### Conda Cola Environment
-Setup the Cola environment with the command:
-
-     $(base) conda create --name cola python=3.7 --quiet --yes && \
-               conda install -n cola --quiet --yes  \
-                 'conda-forge::libgcc-ng=10.3.0' \
-                 'conda-forge::libstdcxx-ng=10.3.0' \
-                 'conda-forge::libgfortran-ng=10.3.0' \
-                 'conda-forge::gxx_linux-64=10.3.0' \
-                 'conda-forge::gcc_linux-64=10.3.0' \
-                 'conda-forge::gfortran_linux-64=10.3.0' \
-                 'conda-forge::openmpi=4.1.1' \
-                 'conda-forge::git=2.33.1' \
-                 'conda-forge::git-lfs=3.0.2' \
-                 'conda-forge::cmake=3.21.3' \
-                 'conda-forge::gsl=2.7' \
-                 'conda-forge::openblas=0.3.18' \
-                 'conda-forge::lapack=3.9.0' \
-                 'conda-forge::cython=0.29.24' \
-                 'conda-forge::numpy=1.21.4' \
-                 'conda-forge::scipy=1.7.2' \
-                 'conda-forge::pandas=1.3.4' \
-                 'conda-forge::mpi4py=3.1.3' \
-                 'conda-forge::matplotlib=3.5.0' \
-                 'conda-forge::astropy=4.3.1' \
-                 'conda-forge::lua=5.4.4' \
-                 'conda-forge::cgal=5.4' \
-                 'conda-forge::fftw=3.3.8=mpi_openmpi_h50a73e0_1014'
-
-**Santos Dumont Users**: Some clusters like Santos Dumont require applications and libraries to be installed in a scratch file system. In the Santos Dumont case, the computing nodes don't have access to the `/home/<USER>` directory and thus the conda environment needs to be setup in the `/scratch/<PROJECT>/<USER>` folder. You can configure where the conda environment is installed by modifying the command above:
-
-     $(base) conda create --prefix /scratch/<PROJECT>/<USER>/.env/cola python=3.7 --quiet --yes && \
-               conda install --prefix /scratch/<PROJECT>/<USER>/.env/cola --quiet --yes  \
-                 'conda-forge::libgcc-ng=10.3.0' \
-                 'conda-forge::libstdcxx-ng=10.3.0' \
-                 'conda-forge::libgfortran-ng=10.3.0' \
-                 'conda-forge::gxx_linux-64=10.3.0' \
-                 'conda-forge::gcc_linux-64=10.3.0' \
-                 'conda-forge::gfortran_linux-64=10.3.0' \
-                 'conda-forge::openmpi=4.1.1' \
-                 'conda-forge::git=2.33.1' \
-                 'conda-forge::git-lfs=3.0.2' \
-                 'conda-forge::cmake=3.21.3' \
-                 'conda-forge::gsl=2.7' \
-                 'conda-forge::openblas=0.3.18' \
-                 'conda-forge::lapack=3.9.0' \
-                 'conda-forge::cython=0.29.24' \
-                 'conda-forge::numpy=1.21.4' \
-                 'conda-forge::scipy=1.7.2' \
-                 'conda-forge::pandas=1.3.4' \
-                 'conda-forge::mpi4py=3.1.3' \
-                 'conda-forge::matplotlib=3.5.0' \
-                 'conda-forge::astropy=4.3.1' \
-                 'conda-forge::lua=5.4.4' \
-                 'conda-forge::cgal=5.4' \
-                 'conda-forge::fftw=3.3.8=mpi_openmpi_h50a73e0_1014'
-
-With this installation method, users must activate the cola environment whenever working with Cola, as shown below 
-
-    $(base) conda activate cola
-
-to clone the repository. 
-   
-### Installation of Cola base code
-
-Type:
-
-     $(cola) $CONDA_PREFIX/bin/git https://github.com/SBU-UNESP-2022-COCOA/FML.git
-     
-     $(cola) cd ./FML
-
-(**expert**) Cola developers with set ssh keys in GitHub may find more convenient to use the command
-
-    $(cola) $CONDA_PREFIX/bin/git clone git@github.com:SBU-UNESP-2022-COCOA/FML.git
-
-(**Warning**) We assumed in the command above that users have installed the pre-requisite packages (including git-lfs) via the recommended **Conda installation method**. With other installation method, `$CONDA_PREFIX/bin/git` should be replaced with `git`. 
-
-Cola is made aware of the chosen installation method (default is via Conda) of required packages via special environment keys located on the [set_installation_options](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/set_installation_options) script, as shown below
-
-    [Extracted from set_installation_options script]
-    #  ---------------------------------------------------------------------------
-    # HOW COLA SHOULD BE INSTALLED? -------------------------------
-
-    #export DOCKER_INSTALLATION=1
-    export MINICONDA_INSTALLATION=1
+### Guide to Install Miniconda <a name="overview_miniconda"></a>
+      
+      export CONDA_DIR=XXX
     
-The user must uncomment the appropriate key, and then type the following command
-
-    $(cola) source install_cola_local_environment
-
-Finally, type
-
-    $(cola) source compile_cola
+      mkdir $CONDA_DIR
     
-to compile Cola
-
-## Running Cola Examples
-
-**Step 1 of 5**: activate the conda environment
-
-    $(base) conda activate cola
-
-**Step 2 of 5**: activate the private python environment
-
-    $(cola) source start_cola
-
-(**warning**) Users will see a terminal that looks like this: `$(cola)(.local)`. *This is a feature, not a bug*! 
-
-(**expert**) Why `$(cola)(.local)` is a feature, not a bug? The Cola environment can be the same for all Cola instances, with [start_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola)/[stop_cola](https://github.com/SBU-UNESP-2022-COCOA/FML/blob/master/start_cola) loading/unloading the corresponding `LD_LIBRARY_PATH`, `CPATH`, `C_INCLUDE_PATH`, `CPLUS_INCLUDE_PATH` and `PATH`. *Why more than one Cola instance?* While users may be running chains in one instance, they might use a second instantiation to make experimental changes.
-
-**Step 3 of 5**: select the number of OpenMP cores
+      wget https://repo.continuum.io/miniconda/Miniconda3-py38_23.9.0-0-Linux-x86_64.sh
     
-    $(cola)(.local) export OMP_PROC_BIND=close
-    $(cola)(.local) export OMP_NUM_THREADS=1
+      /bin/bash Miniconda3-py38_23.9.0-0-Linux-x86_64.sh -f -b -p $CONDA_DIR
+
+Please don't forget to adapt the path assigned to `CONDA_DIR` in the command above:
+
+After installation, users must source the conda configuration file, as shown below:
+
+      source $CONDA_DIR/etc/profile.d/conda.sh \
+          && conda config --set auto_update_conda false \
+          && conda config --set show_channel_urls true \
+          && conda config --set auto_activate_base false \
+          && conda config --prepend channels conda-forge \
+          && conda config --set channel_priority strict \
+          && conda init bash
+
+### Create the Cola Conda environment and Download the Repository
+
+Download the file `colapy38.yml` yml file from the [Cola repository](https://github.com/SBU-COLA-2024/FML). Then, create the conda environment, and activate it with the following commands
+
+     conda env create --name cola --file=colapy38.yml
+     conda activate cola
+
+Finally, download the entire FML repository
     
-**Step 4 of 5**: run cola
+    $CONDA_PREFIX/bin/git https://github.com/SBU-COLA-2024/FML.git FML
+    
+Here, we didn't assume you have git installed (that is why we asked you to download the `colapy38.yml` file manually. In case you already have git installed (but you are not one of the main developers), you can clone the [Cola repository](https://github.com/SBU-COLA-2024/FML) first, as shown below
 
-    $(cola)(.local) mpirun -n 1 --mca btl tcp,self --bind-to core --rank-by core --map-by numa:pe=${OMP_NUM_THREADS} ./FML/COLASolver/nbody
+     git clone --depth 1 https://github.com/SBU-COLA-2024/FML.git FML
+     cd ./FML
+     conda env create --name cola --file=colapy38.yml
+     conda activate cola
 
- (**Santos Dumont users**) You should change the connection specification in `mpirun`. Modify the command above to:
+If you are one of the Cola developers with set SSH keys to the FML GitHub repository, use the command below instead to clone the repository
  
-    $(cola)(.local) mpirun -n 1 --mca btl_tcp_if_include ib0 --bind-to core --rank-by core ./FML/COLASolver/nbody
-
-You should see
+     git clone git@github.com:SBU-COLA-2024/FML.git FML
      
-     #=====================================================
-     #           ________________  .____
-     #           \_   _____/     \ |    |
-     #            |    __)/  \ /  \|    |
-     #            |     \/    Y    \    |___
-     #            \___  /\____|__  /_______ \
-     #                \/         \/        \/
-     #
-     # Initializing FML, MPI and FFTW
-     # MPI is enabled. Running with 1 MPI tasks
-     # OpenMP is enabled. Main task has 1 threads availiable
-     # MPI + Threads is working
-     # FFTW is enabled. Thread support is enabled
-     #
-     # List of tasks:
-     # Task    0 [cn079]
-     #     x-domain [       0 ,        1)
-     #
-     #=====================================================
+     or 
+     
+     $CONDA_PREFIX/bin/git git@github.com:SBU-COLA-2024/FML.git FML
 
-**Step 5 of 5**: stop cola `(.local)` environment and clean your bash `LD_LIBRARY_PATH`, `CPATH`, `C_INCLUDE_PATH`, `CPLUS_INCLUDE_PATH` and `PATH` flags
+### Install COLA (.local) local environment
 
-     $(cola) source stop_cola
+Run the commands below just once after cloning the repository. Here, we assume you are in the folder where you cloned the FML repository.
+     
+     cd ./FML
+     source install_cola_local_environment
+
+### Compile COLA 
+
+Run the commands below. Here, we assume you are in the folder where you cloned the FML repository.
+
+     cd ./FML 
+     source compile_cola
+
+### Run Cola Example 101
+
+Whenever you want to run Cola, you must activate both the conda environment and the local private Python (.local) environment. Here, we assume you are in the folder where you cloned the FML repository.
+     
+     cd ./FML 
+     conda activate cola
+     source start_cola
+
+Users will see a terminal that looks like this: `(cola)(.local)`. The double parenthesis may look strange but don't worry. *The double (cola)(.local) parenthesis is a feature, not a bug*! 
+
+To run Cola for the first time, type
+     
+     export OMP_NUM_THREADS=1
+     
+     mpirun -n 1 --mca btl tcp,self --bind-to core --rank-by core --map-by numa:pe=${OMP_NUM_THREADS} ./FML/COLASolver/nbody
+
+After stopping working with Cola, don't forget to exit the Python `(.local)` environment via the command
+
+     source stop_cola
+
+Why did we create two separate bash environments, `(cola)` and `(.local)`? You should be able to manipulate multiple Cola instances seamlessly, which is particularly useful when running simulations in one instance while experimenting with code development in another. Consistency of the environment across all Cola instances is crucial, and the start_cocoa/stop_cocoa scripts handle the loading and unloading of environmental path variables for each Cola.
 
 # FML
 
