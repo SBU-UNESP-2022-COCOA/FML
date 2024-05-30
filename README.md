@@ -26,25 +26,25 @@ After installation, users must source the conda configuration file, as shown bel
 
 ### Create the Cola Conda environment and Download the Repository
 
-Download the file `colapy38.yml` yml file from the [Cola repository](https://github.com/SBU-COLA-2024/FML). Then, create the conda environment, and activate it with the following commands
+Download the file `colapy38.yml` yml file from this Cola repository. Then, create the conda environment, and activate it with the following commands
 
      conda env create --name cola --file=colapy38.yml
      conda activate cola
 
 Finally, download the entire FML repository
     
-    $CONDA_PREFIX/bin/git https://github.com/SBU-COLA-2024/FML.git FML
+    $CONDA_PREFIX/bin/git https://github.com/SBU-UNESP-2022-COCOA/FML.git FML
     
-Here, we didn't assume you have git installed (that is why we asked you to download the `colapy38.yml` file manually. In case you already have git installed (but you are not one of the main developers), you can clone the [Cola repository](https://github.com/SBU-COLA-2024/FML) first, as shown below
+Here, we didn't assume you have git installed (that is why we asked you to download the `colapy38.yml` file manually. In case you already have git installed (but you are not one of the main developers), you can clone this Cola repository first, as shown below
 
-     git clone --depth 1 https://github.com/SBU-COLA-2024/FML.git FML
+     git clone --depth 1 https://github.com/SBU-UNESP-2022-COCOA/FML.git FML
      cd ./FML
      conda env create --name cola --file=colapy38.yml
      conda activate cola
 
 If you are one of the Cola developers with set SSH keys to the FML GitHub repository, use the command below instead to clone the repository
  
-     git clone git@github.com:SBU-COLA-2024/FML.git FML
+     git clone git@github.com:SBU-UNESP-2022-COCOA/FML.git FML
      
      or 
      
